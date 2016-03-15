@@ -26,6 +26,7 @@ h1, h2, h3, h4{
   background: url(/img/header-stamp.png) center center no-repeat;
   background-size: 340px;
   margin: 0 auto 25px;
+  position: relative;
 }
 
 .main-wrap{
@@ -73,6 +74,7 @@ h1, h2, h3, h4{
   text-align: center;
   padding: 20px 0;
   text-transform: uppercase;
+  position:relative;
 }
 
 .stats .stat-item span{
@@ -92,8 +94,29 @@ h1, h2, h3, h4{
   float:left;
 }
 
+.stat-item:first-child:after{
+  content:'';
+  background:url(/img/noodle-blue-sm.png) left top no-repeat;
+  position:absolute;
+  right: -71px;
+  top: 50%;
+  width: 41px;
+  height:13px;
+}
+
 .stats .stat-item:last-child{
   float:right;
+}
+
+.stat-item:last-child:after{
+  content:'';
+  background:url(/img/noodle-blue-sm.png) left top no-repeat;
+  position:absolute;
+  left: -71px;
+  top: 50%;
+  width: 41px;
+  transform:scaleX(-1);
+  height:13px;
 }
 
 @media (max-width: 650px) {
