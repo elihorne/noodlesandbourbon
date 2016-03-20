@@ -337,6 +337,10 @@ h1, h2, h3, h4{
   border-bottom: 0;
 }
 
+.faq-list.collapsed li:nth-child(3){
+  border-bottom: 0;
+}
+
 .faq-list .question{
   display:block;
   color:#153bb4;

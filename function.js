@@ -45,10 +45,12 @@ function stickyNav() {
 }
 
 function FAQ() {
+  $('.faq-list').addClass('collapsed');
   $('.faq-list li:gt(2)').hide();
   $('.more-faq').on('click', function(event){
     event.preventDefault();
     $('.more-faq').hide();
+    $('.faq-list').removeClass('collapsed');
     $('.faq-list li').fadeIn();
 
   });
