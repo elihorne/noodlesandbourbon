@@ -61,14 +61,15 @@ h1, h2, h3, h4{
 
 .image-break{
   height: 500px;
-  background:#f1f1f1;
+  background:#222;
   background-size: cover;
   background-attachment: fixed;
 }
 
 .main-header{
   text-align:center;
-  padding: 50px 0;
+  position:relative;
+  padding: 50px 0 100px;
 }
 
 .main-header .rsvp-cta{
@@ -78,9 +79,11 @@ h1, h2, h3, h4{
 .button{
   border:1px solid #ff3300;
   display:inline-block;
-  padding: 15px 20px;
+  padding: 12px 20px;
   text-decoration: none;
-  font-size:1.5em;
+  font-size:1.2em;
+  margin-top:15px;
+  text-transform: uppercase;
 }
 
 .main-header .amp{
@@ -171,19 +174,52 @@ h1, h2, h3, h4{
 }
 
 
-.main-nav{
+.main-nav-wrap{
   text-transform: uppercase;
-  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top:1px solid #eee;
 }
 
+.main-nav-wrap{
+  min-height: 40px;
+}
+
+.main-nav{
+  background:#fff;
+}
+
+.main-nav .active{
+  color:#ff3300;
+}
+
+.main-nav.fixed{
+  background:#fff;
+  position: fixed;
+  top: 0;
+  left:0;
+  right:0;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
+  bottom: auto;
+}
+
+#section-rsvp{
+  background:#153bb4;
+  color:#fff;
+}
+
+#section-rsvp h2{
+  color:#fff;
+  margin-bottom:40px;
+}
 
 .main-nav a{
   color: #000;
   text-decoration: none;
-}
-
-.content-section{
-  margin-bottom: 15px;
+  padding: 10px;
+  display:inline-block;
 }
 
 .content-section h2{
@@ -269,8 +305,40 @@ h1, h2, h3, h4{
   text-align: center;
 }
 
+.rsvp-form p{
+  margin: 30px auto;
+}
+
 .rsvp-form input{
   border: 0;
   border-bottom:1px solid #ddd;
-  padding:8px;
+  padding:6px 6px;
+  font-size: 15px;
+  background: none;
+}
+
+.faq-list{
+  max-width: 750px;
+  margin: 50px auto;
+}
+
+.faq-list li{
+  list-style-type: none;
+  border-bottom: 1px solid #eee;
+  padding: 20px 0;
+}
+
+.faq-list li:last-child{
+  border-bottom: 0;
+}
+
+.faq-list .question{
+  display:block;
+  color:#ff3300;
+  margin-bottom: 8px;
+}
+
+.faq-button-wrap{
+  text-align:center;
+  margin-bottom:30px;
 }
