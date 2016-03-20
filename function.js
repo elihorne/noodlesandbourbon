@@ -1,5 +1,6 @@
 function slider(activeSlider){
   activeSlider.find('.content:first-child').show();
+  activeSlider.find('.slider-nav a:first-child').addClass('active');
   activeSlider.find('.slider-nav a').on('click', function(event){
     event.preventDefault();
     activeSlider.find('.slider-nav a').removeClass('active');
