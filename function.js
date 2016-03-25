@@ -56,5 +56,53 @@ function FAQ() {
   });
 }
 
+function RSVP() {
+  $('.rsvp-form .step').hide();
+  $('.rsvp-form .step-1').show();
+  $('.rsvp-form .step-2').show();
+
+  $('.rsvp-form .attendance').change(function(){
+    var selectedAttendance = $('.rsvp-form .attendance').val();
+    if(selectedAttendance === 'yes') {
+      $('.rsvp-form .step-3').show();
+      $('.rsvp-form .step-4').show();
+    } else {
+      $('.rsvp-form .step-3, .rsvp-form .step-4').hide();
+    }
+  });
+
+  $('.rsvp-form .guests').change(function(){
+    var selectedGuests = $('.rsvp-form .guests').val();
+    if(selectedGuests === '0') {
+      $('.rsvp-form .step-4').show();
+      $('.rsvp-form .step-5').hide();
+    };
+    if(selectedGuests === '1') {
+      $('.rsvp-form .step-5').show();
+    }
+  });
+
+  $('.rsvp-form .submit').on('click', function(event){
+    event.preventDefault();
+    var invitedName = $('.rsvp-form .invited-name').val();
+    var invitedNamePlaceholder = $('.rsvp-form .invited-name').attr('placeholder');
+    if(invitedName === invitedNamePlaceholder || invitedName === '') {
+      alert('invited name problem');
+    }
+
+    var guestCount = $('.rsvp-form .guests').val();
+    if(guestCount === '1') {
+      var guestName = $('.rsvp-form .guest-name').val();
+      var guestNamePlaceholder = $('.rsvp-form .guest-name').attr('placeholder');
+      if(guestName === guestNamePlaceholder || guestName === '') {
+        alert('guest name problem');
+      }
+    }
+
+  })
+
+};
+
+RSVP();
 stickyNav();
 FAQ();

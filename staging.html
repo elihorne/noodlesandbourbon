@@ -39,7 +39,7 @@
         </nav>
       </div>
     </header>
-    <section class="image-break image-1"></section>
+    <section class="image-break" data-parallax="scroll" data-image-src="/img/iceland-sample-1.jpg"></section>
     <section id="section-our-story" class="content-section main-wrap">
       <h2>Our Story</h2>
       <p>Liz and Eli met at a friend's birthday party (Thanks, Julia!). They talked for hours, but didn't meet again for 2 years.</p>
@@ -47,7 +47,7 @@
       <p>Fast forward to today: they are traveling the world, and continue to fall in love with each other.<p>
       <p>They invite you to celebrate their wedding in one of the first places they visited to together - Iceland.</p>
     </section>
-    <section class="image-break image-2"></section>
+    <section class="image-break" data-parallax="scroll" data-image-src="/img/iceland-sample-2.jpg"></section>
     <section id="section-the-location" class="content-section main-wrap">
       <h2>Details</h2>
       <div class="slider">
@@ -68,19 +68,19 @@
           </div>
         </div>
     </section>
-    <section class="image-break image-3"></section>
+    <section class="image-break" data-parallax="scroll" data-image-src="/img/iceland-sample-3.jpg"></section>
     <section id="section-rsvp" class="content-section main-wrap">
       <h2>RSVP</h2>
       <form class="rsvp-form">
-        <p>I, <input type="text" placeholder="your name here" /></p>
-        <p><select><option>am excited to attend</option><option>regretfully cannot attend</option></select> the wedding on August 20th.</p>
-        <p>I am bringing <input type="text" placeholder="number"/> guests</p>
-        <p>For my entree, I would like the delicious <select><option>meat</option><option>fish</option><option>vegetarian</option></select> option.</p>
-        <p>My guest, <input type="text" placeholder="name" />, would like the <select><option>meat</option><option>fish</option><option>vegetarian</option></select> option.</p>
+        <div class="step step-1">I, <input type="text" class="invited-name" placeholder="your name here" /></div>
+        <div class="step step-2"><select class="attendance"><option value="no">regretfully cannot attend</option><option value="yes">am excited to attend</option></select> the wedding on August 20th.</div>
+        <div class="step step-3">I am bringing <select class="guests"><option value="0">0</option><option value="1">1</option></select> guests.</div>
+        <div class="step step-4">For my entree, I would like the delicious <select><option>meat</option><option>fish</option><option>vegetarian</option></select> option.</div>
+        <div class="step step-5">My guest, <input class="guest-name" type="text" placeholder="your guest's name" />, would like the <select><option>meat</option><option>fish</option><option>vegetarian</option></select> option.</div>
         <a class="submit button" href="#">Ship it!</a>
       </form>
     </section>
-    <section class="image-break image-4"></section>
+    <section class="image-break" data-parallax="scroll" data-image-src="/img/iceland-sample-4.jpg"></section>
     <section id="section-faq" class="content-section main-wrap">
       <h2>FAQ</h2>
       <ul class="faq-list">
@@ -121,8 +121,9 @@
         <a class="mini-button more-faq" href="#">More questions and answers</a>
       </div>
     </section>
-    <section class="image-break image-5"></section>
+    <section class="image-break" data-parallax="scroll" data-image-src="/img/iceland-sample-5.jpg"></section>
     <footer class="main-footer main-wrap">&lt;2 Noodles &amp; Bourbon</footer>
   </body>
+  <script src="/js/parallax.js"></script>
   <script src="/function.js"></script>
 </html>
