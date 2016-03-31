@@ -32,6 +32,10 @@ h1, h2, h3, h4{
 .main-wrap{
   padding: 25px;
   background: #fff;
+  max-width: 750px;
+  margin: 0 auto;
+  clear:both;
+  overflow:hidden;
 }
 
 .image-break{
@@ -179,10 +183,15 @@ h1, h2, h3, h4{
 #section-rsvp{
   background:#153bb4;
   color:#fff;
+  border: 30px solid #fff;
+  border-top:0;
+  border-bottom:0;
 }
 
 #section-rsvp h2{
   color:#fff;
+  margin-top:0;
+  padding-top:30px;
   margin-bottom:40px;
 }
 
@@ -275,6 +284,7 @@ h1, h2, h3, h4{
 
 .rsvp-form{
   text-align: center;
+  background:none;
 }
 
 .rsvp-form .step{
@@ -318,6 +328,35 @@ h1, h2, h3, h4{
 .faq-button-wrap{
   text-align:center;
   margin-bottom:30px;
+}
+
+.stamp{
+  width:150px;
+  height:150px;
+  background:#999;
+  margin: 30px;
+  margin-top:0;
+  position:relative;
+  z-index:1;
+}
+
+.stamp:after{
+  content:'stamp placeholder';
+  position:absolute;
+  left:50%;
+  top:50%;
+  color:#fff;
+  transform:translate(-50%, -50%);
+  text-align:center;
+  z-index:1;
+}
+
+.stamp.right{
+  float:right;
+}
+
+.stamp.left{
+  float:left;
 }
 
 @media (max-width: 650px) {
