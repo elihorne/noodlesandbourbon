@@ -20,6 +20,10 @@ h1, h2, h3, h4{
   font-family: 'Spinnaker', sans-serif;
 }
 
+h3{
+  font-size:1em;
+}
+
 .stamp-heads{
   width:400px;
   height:200px;
@@ -44,7 +48,22 @@ h1, h2, h3, h4{
   background-attachment: fixed;
   border-right:30px solid #fff;
   border-left:30px solid #fff;
+  position:relative;
+  overflow:hidden;
+  clear:both;
 }
+
+.image-break .debug{
+  position:absolute;
+  left:0;
+  bottom:0;
+  background:rgba(0,0,0,0.5);
+  color:#fff;
+  font-size:10px;
+  padding:6px;
+}
+
+/*NOTE: Delete this for launch*/
 
 .main-header{
   text-align:center;
@@ -165,8 +184,6 @@ h1, h2, h3, h4{
   right: 0;
   border-top:1px solid #eee;
   clear:both;
-
-
 }
 
 .main-nav{
@@ -206,6 +223,14 @@ h1, h2, h3, h4{
   bottom: 80px;
   right:250px;
   background:url(/img/stamp-jack.png) center center no-repeat;
+  background-size:cover;
+}
+
+.stamp-iceland{
+  width:190px;
+  height:115px;
+  margin:40px auto 0;
+  background:url(/img/stamp-iceland.png) center center no-repeat;
   background-size:cover;
 }
 
@@ -276,7 +301,7 @@ h1, h2, h3, h4{
 }
 
 .slider{
-  margin: 0 100px;
+  margin: 0 80px;
 }
 
 .slider .slider-nav{
@@ -312,15 +337,23 @@ h1, h2, h3, h4{
   background:none;
 }
 
+.rsvp-form.main-wrap{
+  padding-top:0;
+}
+
 .rsvp-form .step{
   margin: 30px auto;
+}
+
+.rsvp-form .step:first-child{
+  margin-top:0;
 }
 
 .rsvp-form input{
   border: 0;
   border-bottom:1px solid #ddd;
   padding:6px 6px;
-  font-size: 1.25em;
+  font-size: 1em;
   background: none;
   color:#fff;
 }

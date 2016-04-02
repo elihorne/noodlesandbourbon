@@ -5,11 +5,11 @@ function slider(activeSlider){
     event.preventDefault();
     activeSlider.find('.slider-nav a').removeClass('active');
     var targetSliderSection = '.' + $(this).attr('class');
-    console.log(targetSliderSection);
+    //console.log(targetSliderSection);
     $(this).addClass('active');
 
     activeSlider.find('.content').hide();
-    activeSlider.find(targetSliderSection).fadeIn();
+    activeSlider.find(targetSliderSection).show();
     window.location
   });
 }
@@ -40,7 +40,7 @@ function stickyNav() {
     var navOffset = $('.image-break:first').offset().top - $(window).scrollTop();
     var navHeight = $('.main-nav').outerHeight();
     //console.log('outerheight = ' + navHeight);
-    console.log(navOffset);
+    //console.log(navOffset);
     if(navOffset <= navHeight) {
       $('.main-nav').addClass('fixed');
     } else {
@@ -71,8 +71,9 @@ function RSVP() {
     if(selectedAttendance === 'yes') {
       $('.rsvp-form .step-3').show();
       $('.rsvp-form .step-4').show();
+      $('.rsvp-form .guests').val('0');
     } else {
-      $('.rsvp-form .step-3, .rsvp-form .step-4').hide();
+      $('.rsvp-form .step-3, .rsvp-form .step-4, .rsvp-form .step-5').hide();
     }
   });
 
@@ -81,9 +82,12 @@ function RSVP() {
     if(selectedGuests === '0') {
       $('.rsvp-form .step-4').show();
       $('.rsvp-form .step-5').hide();
+      $('.rsvp-form .guest-pluralization').text('guests');
     };
     if(selectedGuests === '1') {
+
       $('.rsvp-form .step-5').show();
+      $('.rsvp-form .guest-pluralization').text('guest');
     }
   });
 
@@ -111,14 +115,12 @@ function RSVP() {
 var coverPhotosList = [
   'photo-bg01.jpg',
   'photo-bg02.jpg',
-  'photo-bg03.jpg',
   'photo-bg04.jpg',
   'photo-bg05.jpg',
   'photo-bg06.jpg',
   'photo-bg07.jpg',
   'photo-bg08.jpg',
   'photo-bg09.jpg',
-  'photo-bg10.jpg',
   'photo-bg11.jpg',
   'photo-bg12.jpg',
   'photo-bg13.jpg',
@@ -161,6 +163,7 @@ function coverPhotos(){
   shuffle(coverPhotosList);
   $('.image-break').each(function(index){
     $(this).data('image-src', '/img/cover/' + coverPhotosList[index]);
+    $(this).prepend('<span class="debug">'+coverPhotosList[index]+'</span>');
   });
 }
 
