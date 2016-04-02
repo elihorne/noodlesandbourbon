@@ -108,6 +108,63 @@ function RSVP() {
 
 };
 
+var coverPhotosList = [
+  'photo-bg01.jpg',
+  'photo-bg02.jpg',
+  'photo-bg03.jpg',
+  'photo-bg04.jpg',
+  'photo-bg05.jpg',
+  'photo-bg06.jpg',
+  'photo-bg07.jpg',
+  'photo-bg08.jpg',
+  'photo-bg09.jpg',
+  'photo-bg10.jpg',
+  'photo-bg11.jpg',
+  'photo-bg12.jpg',
+  'photo-bg13.jpg',
+  'photo-bg14.jpg',
+  'photo-bg15.jpg',
+  'photo-bg16.jpg',
+  'photo-bg17.jpg',
+  'photo-bg18.jpg',
+  'photo-bg19.jpg',
+  'photo-bg20.jpg',
+  'photo-bg21.jpg',
+  'photo-bg22.jpg',
+  'photo-bg23.jpg',
+  'photo-bg24.jpg',
+  'photo-bg25.jpg',
+  'photo-bg26.jpg',
+  'photo-bg27.jpg',
+  'photo-bg28.jpg',
+  'photo-bg29.jpg',
+  'photo-bg30.jpg',
+  'photo-bg31.jpg',
+  'photo-bg32.jpg',
+  'photo-bg33.jpg',
+  'photo-bg34.jpg',
+  'photo-bg35.jpg',
+  'photo-bg36.jpg'
+]
+
+function shuffle(a) {
+    var j, x, i;
+    for (i = a.length; i; i -= 1) {
+        j = Math.floor(Math.random() * i);
+        x = a[i - 1];
+        a[i - 1] = a[j];
+        a[j] = x;
+    }
+}
+
+function coverPhotos(){
+  shuffle(coverPhotosList);
+  $('.image-break').each(function(index){
+    $(this).data('image-src', '/img/cover/' + coverPhotosList[index]);
+  });
+}
+
+coverPhotos();
 RSVP();
 stickyNav();
 FAQ();
