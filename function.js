@@ -20,11 +20,11 @@ $('.slider').each(function(){
 });
 
 function stickyNav() {
-  $('.content-section h2').each(function(){
-    var text = $(this).text();
-    var anchor = $(this).parent().attr('id');
-    $('.main-nav').append('<a class="go" href="#'+anchor+'">'+text+'</a>')
-  });
+  //$('.content-section h2').each(function(){
+    //var text = $(this).text();
+    //var anchor = $(this).parent().attr('id');
+    //$('.main-nav').append('<a class="go" href="#'+anchor+'">'+text+'</a>')
+  //});
 
   $('.go').on('click', function(event){
     event.preventDefault();

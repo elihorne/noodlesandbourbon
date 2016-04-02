@@ -216,6 +216,7 @@ h3{
   right:0;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
   bottom: auto;
+  z-index:1000;
 }
 
 .jack-stamp{
@@ -287,6 +288,15 @@ h3{
   margin-top:0;
   padding-top:30px;
   margin-bottom:40px;
+}
+
+.main-nav .stamp-heads{
+  background: url(/img/header-stamp.png) center center no-repeat;
+  background-size:60px;
+  text-indent:-9999em;
+  width:55px;
+  height:auto;
+  display:inline-block;
 }
 
 
