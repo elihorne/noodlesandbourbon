@@ -44,13 +44,11 @@ h3{
 
 .image-break{
   height: 500px;
-  background-size: cover;
-  background-attachment: fixed;
   border-right:30px solid #fff;
   border-left:30px solid #fff;
+  min-height: 400px;
+  background: transparent;
   position:relative;
-  overflow:hidden;
-  clear:both;
 }
 
 .image-break .debug{
@@ -219,21 +217,21 @@ h3{
   z-index:1000;
 }
 
-.jack-stamp{
-  width:90px;
-  height:115px;
-  position:absolute;
-  bottom: 80px;
-  right:250px;
-  background:url(/img/stamp-jack.png) center center no-repeat;
-  background-size:cover;
-}
+
 
 .stamp-iceland{
   width:190px;
   height:115px;
   margin:40px auto 0;
   background:url(/img/stamp-iceland.png) center center no-repeat;
+  background-size:cover;
+}
+
+.stamp-nb{
+  width:350px;
+  height:60px;
+  margin:70px auto;
+  background:url(/img/stamp-nb.png) center center no-repeat;
   background-size:cover;
 }
 
@@ -253,14 +251,24 @@ h3{
   background-size:cover;
 }
 
+.jack-stamp{
+  width:90px;
+  height:115px;
+  display:inline-block;
+  background:url(/img/stamp-jack.png) center center no-repeat;
+  background-size:cover;
+  margin:0 10px;
+}
+
 .clark-stamp{
   width:120px;
   height:150px;
-  position:absolute;
-  bottom: 80px;
-  left:250px;
+  display:inline-block;
   background:url(/img/stamp-clark.png) center center no-repeat;
   background-size:cover;
+  margin:0 10px;
+  position:relative;
+  bottom:-6px;
 }
 
 #section-our-story{
@@ -281,7 +289,7 @@ h3{
   border: 30px solid #fff;
   border-top:0;
   border-bottom:0;
-  padding:100px 0;
+  padding:40px 0;
 }
 
 #section-rsvp h2{
@@ -300,6 +308,10 @@ h3{
   display:inline-block;
 }
 
+.content-section{
+  background:#fff;
+  display:block;
+}
 
 
 .content-section h2{
@@ -342,7 +354,13 @@ h3{
 }
 
 .main-footer{
-  margin-bottom:40px;
+  text-align:center;
+  position:relative;
+  padding: 25px 0 0;
+}
+
+.main-footer p{
+  margin:10px 0 40px;
 }
 
 .rsvp-form{
