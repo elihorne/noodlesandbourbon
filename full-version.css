@@ -49,8 +49,9 @@ h1, h2, h3, h4{
 .main-header{
   text-align:center;
   position:relative;
-  padding: 50px 0 50px;
+  padding: 100px 0 80px;
   letter-spacing: 2px;
+  border-bottom:1px solid rgba(21,59,180,0.25);
 }
 
 .main-header .rsvp-cta{
@@ -158,19 +159,30 @@ h1, h2, h3, h4{
 
 .main-nav-wrap{
   text-transform: uppercase;
-  position: relative;
+  position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   border-top:1px solid #eee;
   clear:both;
 
-}
 
+}
 
 .main-nav{
   background:#fff;
   text-align:center;
+  min-height:47px;
+}
+
+.main-nav a{
+  color: #ff3300;
+  text-decoration: none;
+  padding: 15px 10px;
+  display:inline-block;
+  font-size:.95em;
+  margin:0 20px;
+  letter-spacing:2px;
 }
 
 .main-nav .active{
@@ -185,6 +197,54 @@ h1, h2, h3, h4{
   right:0;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
   bottom: auto;
+}
+
+.jack-stamp{
+  width:90px;
+  height:115px;
+  position:absolute;
+  bottom: 80px;
+  right:250px;
+  background:url(/img/stamp-jack.png) center center no-repeat;
+  background-size:cover;
+}
+
+.ring-stamp{
+  width:150px;
+  height:115px;
+  margin: 80px auto 40px;
+  background:url(/img/stamp-rings.png) center center no-repeat;
+  background-size:cover;
+}
+
+.photo-glamourshot{
+  background:url(/img/photo-glamourshot.png) center center no-repeat;
+  width:380px;
+  height:380px;
+  margin: 50px auto 50px;
+  background-size:cover;
+}
+
+.clark-stamp{
+  width:120px;
+  height:150px;
+  position:absolute;
+  bottom: 80px;
+  left:250px;
+  background:url(/img/stamp-clark.png) center center no-repeat;
+  background-size:cover;
+}
+
+#section-our-story{
+  position:relative;
+  padding-bottom:100px;
+}
+
+#section-our-story p{
+  text-indent:50px;
+  width: 540px;
+  line-height: 1.75em;
+  font-size: 1.1em;
 }
 
 #section-rsvp{
@@ -202,13 +262,7 @@ h1, h2, h3, h4{
   margin-bottom:40px;
 }
 
-.main-nav a{
-  color: #000;
-  text-decoration: none;
-  padding: 10px;
-  display:inline-block;
-  font-size:1.2em;
-}
+
 
 .content-section h2{
   text-align:center;
@@ -247,42 +301,6 @@ h1, h2, h3, h4{
 .slider .content{
   display: none;
   line-height:24px;
-}
-
-.sticky-nav{
-  position:fixed;
-  top: 50%;
-  left:100px;
-  transform: translate(0, -50%);
-}
-
-.sticky-nav a{
-  display:block;
-  position:relative;
-  padding:10px 0;
-  width:200px;
-  text-decoration: none;
-  text-indent:30px;
-  letter-spacing: 2px;
-  transition: all .2s ease-in-out;
-  text-transform: uppercase;
-  font-family: 'Spinnaker', sans-serif;
-}
-
-.sticky-nav a:hover{
-  text-indent:25px;
-}
-
-.sticky-nav a:after{
-  content:'';
-  position:absolute;
-  left:0;
-  top:50%;
-  transform: translate(0, -50%);
-  border:1px solid #999;
-  border-radius:100px;
-  width:10px;
-  height: 10px;
 }
 
 .main-footer{
@@ -378,6 +396,5 @@ h1, h2, h3, h4{
 
 @media (max-width: 450px) {
 
-   body { font-size: 2em; }
 
 }

@@ -29,15 +29,19 @@ function stickyNav() {
   $('.go').on('click', function(event){
     event.preventDefault();
     var target = $(this).attr('href');
+    var arbitraryVerticalOffset = 40; // so you can see just above the h2
     $('html, body').animate({
-      scrollTop: $(target).offset().top
+      scrollTop: $(target).offset().top - arbitraryVerticalOffset
     }, 1000);
   });
 
   $(window).scroll(function(){
     //console.log('scroll');
-    var navOffset = $('.main-nav-wrap').offset().top - $(window).scrollTop();
-    if(navOffset <= 0) {
+    var navOffset = $('.image-break:first').offset().top - $(window).scrollTop();
+    var navHeight = $('.main-nav').outerHeight();
+    //console.log('outerheight = ' + navHeight);
+    console.log(navOffset);
+    if(navOffset <= navHeight) {
       $('.main-nav').addClass('fixed');
     } else {
       $('.main-nav').removeClass('fixed');
