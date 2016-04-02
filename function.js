@@ -10,6 +10,7 @@ function slider(activeSlider){
 
     activeSlider.find('.content').hide();
     activeSlider.find(targetSliderSection).fadeIn();
+    window.location
   });
 }
 
