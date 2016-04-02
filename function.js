@@ -96,7 +96,7 @@ function RSVP() {
     var invitedName = $('.rsvp-form .invited-name').val();
     var invitedNamePlaceholder = $('.rsvp-form .invited-name').attr('placeholder');
     if(invitedName === invitedNamePlaceholder || invitedName === '') {
-      alert('invited name problem');
+      alert('Hey, please provide your name.');
     }
 
     var guestCount = $('.rsvp-form .guests').val();
@@ -104,7 +104,7 @@ function RSVP() {
       var guestName = $('.rsvp-form .guest-name').val();
       var guestNamePlaceholder = $('.rsvp-form .guest-name').attr('placeholder');
       if(guestName === guestNamePlaceholder || guestName === '') {
-        alert('guest name problem');
+        alert("We'll need a name for your guest");
       }
     }
 

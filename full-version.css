@@ -84,9 +84,11 @@ h3{
   min-width: 150px;
   padding: 12px 20px;
   text-decoration: none;
+  letter-spacing: 2px;
   font-size:1.25em;
   margin-top:15px;
   text-transform: uppercase;
+  font-family: 'Spinnaker', sans-serif;
 }
 
 .mini-button{
@@ -273,7 +275,7 @@ h3{
 }
 
 #section-rsvp{
-  background:#153bb4;
+  background:#0a1f62;
   color:#fff;
   border: 30px solid #fff;
   border-top:0;
@@ -338,7 +340,7 @@ h3{
 }
 
 .rsvp-form.main-wrap{
-  padding-top:0;
+  padding-top:20px;
 }
 
 .rsvp-form .step{
@@ -349,6 +351,42 @@ h3{
   margin-top:0;
 }
 
+.rsvp-form input::-webkit-input-placeholder {
+   color: #8a8f9e;
+   text-transform: uppercase;
+   font-size:.8em;
+   text-align:center;
+   line-height:20px;
+}
+
+.rsvp-form input:-moz-placeholder { /* Firefox 18- */
+   color: #8a8f9e;
+   text-transform: uppercase;
+   font-size:.8em;
+   text-align:center;
+   line-height:20px;
+}
+
+.rsvp-form input::-moz-placeholder {  /* Firefox 19+ */
+   color: #8a8f9e;
+   text-transform: uppercase;
+   font-size:.8em;
+   text-align:center;
+   line-height:20px;
+}
+
+.rsvp-form input:-ms-input-placeholder {
+   color: #8a8f9e;
+   text-transform: uppercase;
+   font-size:.8em;
+   text-align:center;
+   line-height:20px;
+}
+
+.rsvp-form input:focus{
+  outline:none;
+}
+
 .rsvp-form input{
   border: 0;
   border-bottom:1px solid #ddd;
@@ -356,6 +394,20 @@ h3{
   font-size: 1em;
   background: none;
   color:#fff;
+}
+
+.rsvp-form .invited-name{
+  width: 370px;
+}
+
+.rsvp-form select{
+  font-size:1.2em;
+  display: inline-block;
+  margin:0 10px;
+}
+
+.rsvp-form .submit{
+  margin: 40px 0;
 }
 
 .faq-list{
@@ -386,35 +438,6 @@ h3{
 .faq-button-wrap{
   text-align:center;
   margin-bottom:30px;
-}
-
-.stamp{
-  width:150px;
-  height:150px;
-  background:#999;
-  margin: 30px;
-  margin-top:0;
-  position:relative;
-  z-index:1;
-}
-
-.stamp:after{
-  content:'stamp placeholder';
-  position:absolute;
-  left:50%;
-  top:50%;
-  color:#fff;
-  transform:translate(-50%, -50%);
-  text-align:center;
-  z-index:1;
-}
-
-.stamp.right{
-  float:right;
-}
-
-.stamp.left{
-  float:left;
 }
 
 @media (max-width: 650px) {
