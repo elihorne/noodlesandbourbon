@@ -91,6 +91,10 @@ h3{
   transition: all .2s ease-in-out;
 }
 
+.button-holder{
+  text-align:center;
+}
+
 .button:hover{
   background:none;
   color:#ff3300;
@@ -201,12 +205,20 @@ h3{
   min-height:47px;
 }
 
+.big-coming-soon{
+  text-align:center;
+  padding: 100px 0;
+  font-family:'Spinnaker';
+  text-transform: uppercase;;
+}
+
 .main-nav a{
   color: #ff3300;
   text-decoration: none;
   padding: 15px 10px;
   display:inline-block;
   font-size:.95em;
+  font-family:'Spinnaker';
   margin:0 20px;
   letter-spacing:2px;
 }
@@ -350,6 +362,7 @@ h3{
   display:inline-block;
   padding:8px 10px;
   margin:0 10px;
+  font-family: 'Spinnaker';
   text-decoration: none;
 }
 
