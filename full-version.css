@@ -21,7 +21,7 @@ h1, h2, h3, h4{
 }
 
 h3{
-  font-size:1em;
+  font-size:16px;
 }
 
 .stamp-heads{
@@ -121,7 +121,7 @@ h3{
   color:#153bb4;
   text-transform: uppercase;
   margin:10px 0;
-  font-size:1.3em;
+  font-size:14px;
   letter-spacing: 2px;
 }
 
@@ -217,7 +217,7 @@ h3{
   text-decoration: none;
   padding: 15px 10px;
   display:inline-block;
-  font-size:.95em;
+  font-size:14px;
   font-family:'Spinnaker';
   margin:0 20px;
   letter-spacing:2px;
@@ -301,7 +301,7 @@ h3{
   text-indent:50px;
   width: 540px;
   line-height: 1.75em;
-  font-size: 1.1em;
+  font-size: 16px;
 }
 
 #section-rsvp{
@@ -332,6 +332,7 @@ h3{
 .content-section{
   background:#fff;
   display:block;
+  font-size: 14px;
 }
 
 
@@ -342,8 +343,9 @@ h3{
 .content-section p{
   margin: 20px auto;
   max-width: 725px;
-  line-height:24px;
+  line-height:1.75em;
   font-family:'Muli', sans-serif;
+  font-size: 14px;
 }
 
 .slider{
@@ -362,6 +364,7 @@ h3{
   display:inline-block;
   padding:8px 10px;
   margin:0 10px;
+  font-size:14px;
   font-family: 'Spinnaker';
   text-decoration: none;
 }
@@ -372,7 +375,6 @@ h3{
 
 .slider .content{
   display: none;
-  line-height:24px;
 }
 
 .main-footer{
