@@ -121,8 +121,14 @@ h3{
   color:#153bb4;
   text-transform: uppercase;
   margin:10px 0;
-  font-size:14px;
+  font-size:22px;
   letter-spacing: 2px;
+}
+
+.main-header .amp-p{
+  font-size: 16px;
+  margin-top:10px;
+  padding-top:5px;
 }
 
 .stats{
@@ -279,6 +285,7 @@ h3{
   background:url(/img/stamp-jack.png) center center no-repeat;
   background-size:cover;
   margin:0 10px;
+  position: relative;
 }
 
 .clark-stamp{
@@ -381,20 +388,47 @@ h3{
   text-align:center;
   position:relative;
   padding: 25px 0 0;
-  background:#fff;
+  background:#fff;f
 }
 
 .main-footer p{
   margin:10px 0 40px;
 }
 
-.rsvp-form{
-  text-align: center;
+.rsvp-form, .rsvp-success{
   background:none;
+}
+
+.rsvp-success{
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.rsvp-success .room{
+  display:inline-block;
+  text-decoration: none;
+  padding: 15px;
+  width: calc(100%/3.42);
+}
+
+.rsvp-success .rooms h3{
+  color:#fff;
+}
+
+.rsvp-success .price-book{
+  font-family: 'Spinnaker', sans-serif;
+}
+
+.rsvp-success .price-book a {
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  margin-left:10px;
 }
 
 .rsvp-form.main-wrap{
   padding-top:20px;
+  text-align: center;
 }
 
 .rsvp-form .step{
@@ -492,6 +526,44 @@ h3{
 .faq-button-wrap{
   text-align:center;
   margin-bottom:30px;
+}
+
+.debug-step-1{
+  width: 15px;
+  height: 15px;
+  position:absolute;
+  top:60px;
+  left: 40px;
+  text-transform: uppercase;
+}
+
+.debug-step-2{
+  position:absolute;
+  bottom: 0;
+  right:0;
+  background:#911;
+  color:#fff;
+  font-size:10px;
+  padding:10px;
+  opacity: 0.1;
+  display:none;
+  text-transform: uppercase;
+}
+
+.debug-step-2:hover{
+  opacity: 1;
+}
+
+.debug-off{
+  position:fixed;
+  bottom: 0;
+  right:0;
+  background:green;
+  color:#fff;
+  font-size:10px;
+  padding:10px;
+  display:none;
+  text-transform: uppercase;
 }
 
 @media (max-width: 650px) {

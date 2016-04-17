@@ -123,17 +123,38 @@
   <section id="section-rsvp" class="content-section">
     <h2>RSVP</h2>
     <div class="stamp-nb"></div>
-    <!-- <form class="rsvp-form main-wrap">
-        <div class="step step-1">I, <input type="text" class="invited-name" placeholder="your name here" /></div>
-        <div class="step step-2"><select class="attendance"><option value="no">regretfully cannot attend</option><option value="yes">am excited to attend</option></select> the wedding on August 20th.</div>
-        <div class="step step-3">I am bringing <select class="guests"><option value="0">0</option><option value="1">1</option></select> <span class="guest-pluralization">guests</span>.</div>
-        <div class="step step-4">For my entree, I would like the delicious <select><option>meat</option><option>fish</option><option>vegetarian</option></select> option.</div>
-        <div class="step step-5">My guest, <input class="guest-name" type="text" placeholder="your guest's name" />, would like the <select><option>meat</option><option>fish</option><option>vegetarian</option></select> option.</div>
-        <a class="submit button" href="#">All set</a>
-      </form> -->
-    <div class="big-coming-soon">
-      <p>Coming soon.</p>
+    <form class="rsvp-form main-wrap">
+      <div class="step step-1">I, <input type="text" class="invited-name" placeholder="your name here" /></div>
+      <div class="step step-2"><select class="attendance"><option value="no">regretfully cannot attend</option><option value="yes">am excited to attend</option></select> the wedding on August 20th.</div>
+      <div class="step step-3">I am bringing <select class="guests"><option value="0">0</option><option value="1">1</option></select> <span class="guest-pluralization">guests</span>.</div>
+      <div class="step step-4">For my entree, I would like the delicious <select class="invited-food"><option value="beef">beef</option><option value="lamb">lamb</option><option value="fish">fish</option><option value="vegetarian">vegetarian</option></select> option.</div>
+      <div class="step step-5">My guest, <input class="guest-name" type="text" placeholder="your guest's name" />, would like the <select class="guest-food"><option value="beef">beef</option><option value="lamb">lamb</option><option value="fish">fish</option><option value="vegetarian">vegetarian</option></select> option.</div>
+      <div class="step step-6">I <select class="transport"><option value="do">do</option><option value="not">do not</option></select> need bus transportation from Reykjavik to the Hotel Budir.</div>
+      <a class="submit button" href="#">All set</a>
+    </form>
+    <div class="rsvp-success">
+      <p>One last thing: if you are planning to stay at the Hotel Budir where the cocktail hour, reception, and bus services will take place, please book a room:</p>
+      <div class="rooms">
+        <div class="room">
+          <h3>Loft</h3>
+          <p>Small but cozy with a sloping ceiling and a loft window with similar views as standard-rooms. All of them have queen sized beds and showers in the bathrooms.</p>
+          <p class="price-book">$321 <a href="#" class="book-now">Book now</a></p>
+        </div>
+        <div class="room">
+          <h3>Standard</h3>
+          <p>View either towards the mountain over the river, or in the direction of the small church towards the sea. Four of the standard rooms have bathtubs, the others have showers.</p>
+          <p class="price-book">$367 <a href="#" class="book-now">Book now</a></p>
+        </div>
+        <div class="room">
+          <h3>Deluxe</h3>
+          <p>View of the glacier or overlooking the sandy beach and the sea. Bigger than the standard rooms, with queen or king size beds and all except one have bathtubs.</p>
+          <p class="price-book">$438 <a href="#" class="book-now">Book now</a></p>
+        </div>
+      </div>
     </div>
+    <!-- <div class="big-coming-soon">
+      <p>Coming soon.</p>
+    </div> -->
   </section>
   <section class="image-break" data-parallax="scroll" data-image-src=""></section>
   <section id="section-registry" class="content-section">
@@ -176,6 +197,7 @@
   </footer>
 </body>
 <script src="/js/parallax.js"></script>
+<script src="/js/cookie.js"></script>
 <script src="/function.js"></script>
 
 </html>

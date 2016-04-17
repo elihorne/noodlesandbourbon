@@ -29,6 +29,8 @@ function stickyNav() {
   $('.go').on('click', function(event){
     event.preventDefault();
     var target = $(this).attr('href');
+    var url = window.location.href
+    history.pushState(null, null, target);
     var arbitraryVerticalOffset = 40; // so you can see just above the h2
     $('html, body').animate({
       scrollTop: $(target).offset().top - arbitraryVerticalOffset
@@ -62,7 +64,25 @@ function FAQ() {
 }
 
 function RSVP() {
-  $('.rsvp-form .step').hide();
+
+  /*
+  step 1 - invited name
+  step 2 - invited will/will not attend
+  step 3 - guest yes/no
+  step 4 - invited food choice
+  step 5 - guest food choice
+  step 6 - need transportation
+  */
+
+  // check cookie to see if they've already filled out the RSVP
+
+  // if no RSVP
+  $('.rsvp-success').hide();
+
+
+  if(!$('.rsvp-form').hasClass('show-all')) {
+    $('.rsvp-form .step').hide();
+  }
   $('.rsvp-form .step-1').show();
   $('.rsvp-form .step-2').show();
 
@@ -71,9 +91,11 @@ function RSVP() {
     if(selectedAttendance === 'yes') {
       $('.rsvp-form .step-3').show();
       $('.rsvp-form .step-4').show();
+      $('.rsvp-form .step-6').show();
       $('.rsvp-form .guests').val('0');
+      $('.rsvp-form .guest-pluralization').text('guests');
     } else {
-      $('.rsvp-form .step-3, .rsvp-form .step-4, .rsvp-form .step-5').hide();
+      $('.rsvp-form .step-3, .rsvp-form .step-4, .rsvp-form .step-5, .rsvp-form .step-6').hide();
     }
   });
 
@@ -93,22 +115,96 @@ function RSVP() {
 
   $('.rsvp-form .submit').on('click', function(event){
     event.preventDefault();
-    var invitedName = $('.rsvp-form .invited-name').val();
-    var invitedNamePlaceholder = $('.rsvp-form .invited-name').attr('placeholder');
-    if(invitedName === invitedNamePlaceholder || invitedName === '') {
-      alert('Hey, please provide your name.');
-    }
+    if($('body').hasClass('debug')) {
+      // we are debugging, so just show the hotel info
+      console.log('RSVP submission skipped');
+      RSVPSuccess();
+    } else {
 
-    var guestCount = $('.rsvp-form .guests').val();
-    if(guestCount === '1') {
-      var guestName = $('.rsvp-form .guest-name').val();
-      var guestNamePlaceholder = $('.rsvp-form .guest-name').attr('placeholder');
-      if(guestName === guestNamePlaceholder || guestName === '') {
-        alert("We'll need a name for your guest");
+      var invitedName = $('.rsvp-form .invited-name').val();
+      var invitedNamePlaceholder = $('.rsvp-form .invited-name').attr('placeholder');
+      if(invitedName === invitedNamePlaceholder || invitedName === '') {
+        var invitedNameValidate = false;
+        alert('Hey, please provide your name.');
+      } else {
+        var invitedNameValidate = true;
+      }
+
+      var guestCount = $('.rsvp-form .guests').val();
+      if(guestCount === '1') {
+        var guestName = $('.rsvp-form .guest-name').val();
+        var guestNamePlaceholder = $('.rsvp-form .guest-name').attr('placeholder');
+        if(guestName === guestNamePlaceholder || guestName === '') {
+          var guestNameValidate = false;
+          alert("We'll need a name for your guest");
+        } else {
+          var guestNameValidate = true;
+        }
+      } else {
+        var guestNameValidate = true;
+      }
+
+      if(invitedNameValidate && guestNameValidate) {
+        // check that invited name and guest name are real
+        // submit the form
+        postRSVP();
       }
     }
+  });
 
-  })
+  function RSVPSuccess() {
+    // set the cookie
+    // hide the form
+    // show the hotel order form
+    $('.rsvp-form').hide();
+    $('.rsvp-success').show();
+
+    $('#section-rsvp h2').text("Thanks for RSVP'ing");
+
+  }
+
+  function postRSVP(){
+    var invitedName = $('.rsvp-form .invited-name').val();
+    var invitedAttendance = $('.rsvp-form .attendance').val();
+    var guestCount = $('.rsvp-form .guests').val();
+    var guestName = $('.rsvp-form .guest-name').val();
+    var invitedFoodChoice = $('.rsvp-form .invited-food').val();
+    var guestFoodChoice = $('.rsvp-form .guest-food').val();
+    var transportation = $('.rsvp-form .transport').val();
+
+    console.log('invitedName = ' + invitedName);
+    console.log('invitedAttendance = ' + invitedAttendance);
+    console.log('guestCount = ' + guestCount);
+    console.log('guestName = ' + guestName);
+    console.log('invitedFoodChoice = ' + invitedFoodChoice);
+    console.log('guestFoodChoice = ' + guestFoodChoice);
+    console.log('transportation = ' + transportation);
+
+    $.ajax({
+      url: "https://docs.google.com/forms/d/1c6zUDJhTuU1jROzhVULY0rE38aYm1TPXAGeHcCF25g8/formResponse",
+      data: {
+        'entry.835142579': invitedName,
+        'entry.1800779811': invitedAttendance,
+        'entry.1707877282': guestCount,
+        'entry.1171757403': guestName,
+        'entry.1749714160': invitedFoodChoice,
+        'entry.1687823027': guestFoodChoice,
+        'entry.779611491': transportation
+      },
+      type: "POST",
+      dataType: "xml",
+      statusCode: {
+        0: function() {
+          // success
+          RSVPSuccess();
+        },
+        200: function() {
+          // success
+          RSVPSuccess();
+        }
+      }
+    });
+  }
 
 };
 
@@ -134,7 +230,6 @@ var coverPhotosList = [
   'photo-bg21.jpg',
   'photo-bg22.jpg',
   'photo-bg23.jpg',
-  'photo-bg24.jpg',
   'photo-bg25.jpg',
   'photo-bg26.jpg',
   'photo-bg27.jpg',
@@ -159,13 +254,60 @@ function shuffle(a) {
     }
 }
 
+function setup(){
+  function addDebugLink(){
+   $('.jack-stamp').prepend('<span class="debug-step-1"></span>');
+   $('.main-footer').prepend('<span class="debug-step-2">Turn on Debug Mode</span>');
+   $('.main-footer').prepend('<span class="debug-off">Turn off Debug Mode</span>');
+
+   $('.debug-step-1').on('click', function(){
+     $('.debug-step-2').show();
+   });
+
+   $('.debug-step-2').on('click', function(){
+     turnDebugOn();
+     window.location.reload();
+   });
+
+   $('.debug-off').on('click', function(){
+     turnDebugOff();
+
+   });
+  }
+
+  addDebugLink();
+
+  function turnDebugOn() {
+    $('.debug-step-2').hide();
+    $('.debug-off').show();
+    Cookies.set('debug', 'on');
+    $('body').toggleClass('debug');
+    console.log('debug is on');
+  }
+
+  function turnDebugOff() {
+    Cookies.remove('debug');
+    console.log('debug is off');
+    window.location.reload();
+  }
+
+  if(Cookies.get('debug')){
+    turnDebugOn();
+  };
+
+}
+
 function coverPhotos(){
   shuffle(coverPhotosList);
   $('.image-break').each(function(index){
     $(this).data('image-src', '/img/cover/' + coverPhotosList[index]);
-    $(this).prepend('<span class="debug">'+coverPhotosList[index]+'</span>');
+    if($('body').hasClass('debug')) {
+      $(this).prepend('<span class="debug">'+coverPhotosList[index]+'</span>');
+    }
   });
 }
+
+setup();
 
 coverPhotos();
 RSVP();
