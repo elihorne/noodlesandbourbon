@@ -241,7 +241,9 @@ var coverPhotosList = [
   'photo-bg33.jpg',
   'photo-bg34.jpg',
   'photo-bg35.jpg',
-  'photo-bg36.jpg'
+  'photo-bg36.jpg',
+  'photo-bg37.jpg',
+  'photo-bg38.jpg'
 ]
 
 function shuffle(a) {
