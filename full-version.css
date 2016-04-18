@@ -262,6 +262,32 @@ h3{
   background-size:cover;
 }
 
+.center{
+  text-align:center;
+}
+
+.stamp-registry{
+  width:350px;
+  height:130px;
+  margin:50px auto;
+  background:url(/img/stamp-registry.png) center center no-repeat;
+  background-size:300px;
+}
+
+#section-registry{
+  padding: 20px 0 25px;
+}
+
+#section-registry .center{
+  margin-top:50px;
+}
+
+#section-registry p{
+  width: 540px;
+  line-height: 1.75em;
+  font-size: 16px;
+}
+
 .ring-stamp{
   width:150px;
   height:115px;
