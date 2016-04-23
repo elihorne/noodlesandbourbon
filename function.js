@@ -26,15 +26,28 @@ function stickyNav() {
     //$('.main-nav').append('<a class="go" href="#'+anchor+'">'+text+'</a>')
   //});
 
-  $('.go').on('click', function(event){
-    event.preventDefault();
-    var target = $(this).attr('href');
-    var url = window.location.href
-    history.pushState(null, null, target);
-    var arbitraryVerticalOffset = 40; // so you can see just above the h2
-    $('html, body').animate({
-      scrollTop: $(target).offset().top - arbitraryVerticalOffset
-    }, 1000);
+  $('a').on('click', function(event){
+    if($(this).hasClass('go')) {
+      event.preventDefault();
+      var target = $(this).attr('href');
+      var url = window.location.href
+      history.pushState(null, null, target);
+      var arbitraryVerticalOffset = 40; // so you can see just above the h2
+      $('html, body').animate({
+        scrollTop: $(target).offset().top - arbitraryVerticalOffset
+      }, 1000);
+    } else {
+      event.preventDefault();
+      var noodlesHost = window.location.hostname;
+      var parser = document.createElement('a');
+      parser.href = $(this).attr('href');
+
+      if(parser.hostname != noodlesHost) {
+        // external url
+        window.open(parser.href,'_blank');
+      }
+    }
+
   });
 
   $(window).scroll(function(){
