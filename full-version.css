@@ -546,6 +546,7 @@ h3{
 .faq-list{
   max-width: 750px;
   margin: 50px auto;
+  padding: 0;
 }
 
 .faq-list li{
