@@ -303,6 +303,7 @@ h3{
 }
 
 .photo-glamourshot{
+
   max-width:380px;
   margin: 50px auto 50px;
 }
@@ -648,6 +649,33 @@ h3{
 
   .rsvp-form .invited-name{
     width: 250px;
+  }
+
+}
+
+
+@media (max-width: 400px) {
+  /*iphone se is 320*/
+  .stamp-heads{
+    width: 250px;
+    background-size:280px;
+  }
+
+  .main-nav a{
+    font-size:11px;
+    padding:15px 4px;
+  }
+
+  .slider-nav a{
+    padding:8px 2px;
+    font-size: 12px;
+  }
+
+  .stamp-registry{
+    width: 235px;
+    height:80px;
+    background-size: cover;
+
   }
 
 }
