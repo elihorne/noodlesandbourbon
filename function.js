@@ -174,7 +174,7 @@ function RSVP() {
     if(Cookies.get('notAttending')) {
       $('#section-rsvp h2').text("Bummer");
       $('.rooms').hide();
-      $('.big-coming-soon').show().text('Hope to see you soon.').addClass('center');
+      $('.rsvp-success').append('<p class="big-coming-soon center">We will miss you! Hope to see you soon.</p>');
     } else {
       $('#section-rsvp h2').text("Thanks for RSVP'ing");
     }
