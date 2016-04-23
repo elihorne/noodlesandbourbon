@@ -632,11 +632,12 @@ h3{
   }
 
   .slider{
-    margin: 0 20px;
+    margin: 0;
   }
 
   .slider-nav a {
     margin: 0;
+    padding: 8px;
   }
 
   .rsvp-form .step{
