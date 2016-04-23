@@ -228,6 +228,10 @@ h3{
   letter-spacing:2px;
 }
 
+.center{
+  text-align:center;
+}
+
 .main-nav .active{
   color:#ff3300;
 }

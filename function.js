@@ -171,15 +171,23 @@ function RSVP() {
     // show the hotel order form
     $('.rsvp-success').show();
 
-    $('#section-rsvp h2').text("Thanks for RSVP'ing");
+    if(Cookies.get('notAttending')) {
+      $('#section-rsvp h2').text("Bummer");
+      $('.rooms').hide();
+      $('.big-coming-soon').show().text('Hope to see you soon.').addClass('center');
+    } else {
+      $('#section-rsvp h2').text("Thanks for RSVP'ing");
+    }
 
-    // debug to get rid of the cookie
+
+    // debug to get rid of the hasRSVPd cookie
     if($('body').hasClass('debug')) {
       // we are debugging, so allow cookie clearing
       $('.stamp-champagne').on('click', function(){
         Cookies.remove('hasRSVP');
+        Cookies.remove('notAttending');
         window.location.reload();
-        
+
       })
     }
 
@@ -203,6 +211,10 @@ function RSVP() {
       console.log('invitedFoodChoice = ' + invitedFoodChoice);
       console.log('guestFoodChoice = ' + guestFoodChoice);
       console.log('transportation = ' + transportation);
+    }
+
+    if(invitedAttendance === 'no') {
+      Cookies.set('notAttending', true);
     }
 
     $.ajax({
