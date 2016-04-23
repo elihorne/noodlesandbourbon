@@ -381,6 +381,14 @@ h3{
   text-align:center;
 }
 
+.content-section h3{
+  margin-top:50px;
+}
+
+.content-section h3:first-child{
+  margin-top:0;
+}
+
 .content-section p{
   margin: 20px auto;
   max-width: 725px;
