@@ -289,7 +289,7 @@ h3{
 }
 
 #section-registry p{
-  width: 540px;
+  max-width: 540px;
   line-height: 1.75em;
   font-size: 16px;
 }
@@ -338,7 +338,7 @@ h3{
 
 #section-our-story p{
   text-indent:50px;
-  width: 540px;
+  max-width: 540px;
   line-height: 1.75em;
   font-size: 16px;
 }
@@ -477,6 +477,7 @@ h3{
 
 .rsvp-form .step{
   margin: 30px auto;
+  line-height:32px;
 }
 
 .rsvp-form .step:first-child{
@@ -620,7 +621,29 @@ h3{
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 650px) {
+  *{
+    /*border:1px solid #911;*/
+  }
 
+  .main-nav a{
+    margin: 0;
+  }
+
+  .slider{
+    margin: 0 20px;
+  }
+
+  .slider-nav a {
+    margin: 0;
+  }
+
+  .rsvp-form .step{
+
+  }
+
+  .rsvp-form .invited-name{
+    width: 250px;
+  }
 
 }
