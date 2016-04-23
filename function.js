@@ -14,10 +14,13 @@ function slider(activeSlider){
   });
 }
 
-$('.slider').each(function(){
-  var activeSlider = $(this);
-  slider(activeSlider);
-});
+function sliderSetup() {
+  $('.slider').each(function(){
+    var activeSlider = $(this);
+    slider(activeSlider);
+  });
+}
+
 
 function stickyNav() {
   //$('.content-section h2').each(function(){
@@ -222,41 +225,146 @@ function RSVP() {
 };
 
 var coverPhotosList = [
-  'photo-bg01.jpg',
-  'photo-bg02.jpg',
-  'photo-bg04.jpg',
-  'photo-bg05.jpg',
-  'photo-bg06.jpg',
-  'photo-bg07.jpg',
-  'photo-bg08.jpg',
-  'photo-bg09.jpg',
-  'photo-bg11.jpg',
-  'photo-bg12.jpg',
-  'photo-bg13.jpg',
-  'photo-bg14.jpg',
-  'photo-bg15.jpg',
-  'photo-bg16.jpg',
-  'photo-bg17.jpg',
-  'photo-bg18.jpg',
-  'photo-bg19.jpg',
-  'photo-bg20.jpg',
-  'photo-bg21.jpg',
-  'photo-bg22.jpg',
-  'photo-bg23.jpg',
-  'photo-bg25.jpg',
-  'photo-bg26.jpg',
-  'photo-bg27.jpg',
-  'photo-bg28.jpg',
-  'photo-bg29.jpg',
-  'photo-bg30.jpg',
-  'photo-bg31.jpg',
-  'photo-bg32.jpg',
-  'photo-bg33.jpg',
-  'photo-bg34.jpg',
-  'photo-bg35.jpg',
-  'photo-bg36.jpg',
-  'photo-bg37.jpg',
-  'photo-bg38.jpg'
+  [
+    'photo-bg01.jpg',
+    'Paris, France - 2014'
+  ],
+  [
+    'photo-bg02.jpg',
+    'Reykjavik, Iceland - 2011'
+  ],
+  [
+    'photo-bg04.jpg',
+    'Ko Phi Phi, Thailand - 2012'
+  ],
+  [
+    'photo-bg05.jpg',
+    'Vieques, Puerto Rico - 2013'
+  ],
+  [
+    'photo-bg06.jpg',
+    'Kyoto, Japan - 2013'
+  ],
+  [
+    'photo-bg07.jpg',
+    'Petra, Jordan - 2013'
+  ],
+  [
+    'photo-bg08.jpg',
+    'Amman, Jordan - 2013'
+  ],
+  [
+    'photo-bg09.jpg',
+    'Cliffs of Moher, Ireland - 2013'
+  ],
+  [
+    'photo-bg11.jpg',
+    'Punta Cana, Dominican Republic - 2014'
+  ],
+  [
+    'photo-bg12.jpg',
+    'Punta Cana, Dominican Republic - 2014'
+  ],
+  [
+    'photo-bg13.jpg',
+    'Penang, Malaysia - 2015'
+  ],
+  [
+    'photo-bg14.jpg',
+    'Ankor Wat, Cambodia - 2015'
+  ],
+  [
+    'photo-bg15.jpg',
+    'Mui Ne, Vietnam - 2015'
+  ],
+  [
+    'photo-bg16.jpg',
+    'Da Lat, Vietnam - 2015'
+  ],
+  [
+    'photo-bg17.jpg',
+    'Luang Prabang, Laos - 2015'
+  ],
+  [
+    'photo-bg18.jpg',
+    'Ha Long Bay, Vietnam - 2015'
+  ],
+  [
+    'photo-bg19.jpg',
+    'Chiang Mai, Thailand - 2015'
+  ],
+  [
+    'photo-bg20.jpg',
+    'Mandalay, Myanmar - 2015'
+  ],
+  [
+    'photo-bg21.jpg',
+    'Bagan, Myanmar - 2015'
+  ],
+  [
+    'photo-bg22.jpg',
+    'Bagan, Myanmar - 2015'
+  ],
+  [
+    'photo-bg23.jpg',
+    'Bagan, Myanmar - 2015'
+  ],
+  [
+    'photo-bg25.jpg',
+    'Inle Lake, Myanmar - 2015'
+  ],
+  [
+    'photo-bg26.jpg',
+    'Ko Tao, Thailand - 2015'
+  ],
+  [
+    'photo-bg27.jpg',
+    'Boracay, Philippines - 2015'
+  ],
+  [
+    'photo-bg28.jpg',
+    'Brooklyn, New York - 2015'
+  ],
+  [
+    'photo-bg29.jpg',
+    'Big Sur, California - 2015'
+  ],
+  [
+    'photo-bg30.jpg',
+    'Brooklyn, New York - 2015'
+  ],
+  [
+    'photo-bg31.jpg',
+    'Arenal, Costa Rica - 2015'
+  ],
+  [
+    'photo-bg32.jpg',
+    'Cappadocia, Turkey - 2015'
+  ],
+  [
+    'photo-bg33.jpg',
+    'Cappadocia, Turkey - 2015'
+  ],
+  [
+    'photo-bg34.jpg',
+    'Cappadocia, Turkey - 2015'
+  ],
+  [
+    'photo-bg35.jpg',
+    'Cappadocia, Turkey - 2015'
+  ],
+  [
+    'photo-bg36.jpg',
+    'Cappadocia, Turkey - 2015'
+  ],
+  [
+    'photo-bg37.jpg',
+    'Maui, Hawaii - 2016'
+  ],
+  [
+    'photo-bg38.jpg',
+    'Maui, Hawaii - 2016'
+  ]
 ]
 
 function shuffle(a) {
@@ -315,10 +423,8 @@ function setup(){
 function coverPhotos(){
   shuffle(coverPhotosList);
   $('.image-break').each(function(index){
-    $(this).data('image-src', '/img/cover/' + coverPhotosList[index]);
-    if($('body').hasClass('debug')) {
-      $(this).prepend('<span class="debug">'+coverPhotosList[index]+'</span>');
-    }
+    $(this).data('image-src', '/img/cover/' + coverPhotosList[index][0]);
+    $(this).prepend('<span class="debug">'+coverPhotosList[index][1]+'</span>');
   });
 }
 
@@ -327,4 +433,5 @@ setup();
 coverPhotos();
 RSVP();
 stickyNav();
+sliderSetup();
 FAQ();

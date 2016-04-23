@@ -55,9 +55,9 @@ h3{
   position:absolute;
   left:0;
   bottom:0;
-  background:rgba(0,0,0,0.5);
+  background:rgba(0,0,0,0.25);
   color:#fff;
-  font-size:10px;
+  font-size:11px;
   padding:6px;
 }
 
@@ -259,6 +259,14 @@ h3{
   height:60px;
   margin:70px auto;
   background:url(/img/stamp-nb.png) center center no-repeat;
+  background-size:cover;
+}
+
+.stamp-champagne{
+  width:70px;
+  height:90px;
+  margin:50px auto;
+  background:url(/img/stamp-champagne.png) center center no-repeat;
   background-size:cover;
 }
 
