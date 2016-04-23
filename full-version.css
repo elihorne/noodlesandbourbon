@@ -347,8 +347,8 @@ h3{
   background:#0a1f62;
   color:#fff;
   border: 30px solid #fff;
-  border-top:0;
-  border-bottom:0;
+  border-left:0;
+  border-right:0;
   padding:40px 0;
 }
 
@@ -628,6 +628,7 @@ h3{
 
   .main-nav a{
     margin: 0;
+    font-size:13px;
   }
 
   .slider{
