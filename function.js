@@ -5,7 +5,6 @@ function slider(activeSlider){
     event.preventDefault();
     activeSlider.find('.slider-nav a').removeClass('active');
     var targetSliderSection = '.' + $(this).attr('class');
-    //console.log(targetSliderSection);
     $(this).addClass('active');
 
     activeSlider.find('.content').hide();
@@ -23,12 +22,6 @@ function sliderSetup() {
 
 
 function stickyNav() {
-  //$('.content-section h2').each(function(){
-    //var text = $(this).text();
-    //var anchor = $(this).parent().attr('id');
-    //$('.main-nav').append('<a class="go" href="#'+anchor+'">'+text+'</a>')
-  //});
-
   $('a').on('click', function(event){
     if($(this).hasClass('go')) {
       event.preventDefault();
@@ -50,15 +43,11 @@ function stickyNav() {
         window.open(parser.href,'_blank');
       }
     }
-
   });
 
   $(window).scroll(function(){
-    //console.log('scroll');
     var navOffset = $('.image-break:first').offset().top - $(window).scrollTop();
     var navHeight = $('.main-nav').outerHeight();
-    //console.log('outerheight = ' + navHeight);
-    //console.log(navOffset);
     if(navOffset <= navHeight) {
       $('.main-nav').addClass('fixed');
     } else {
@@ -90,11 +79,15 @@ function RSVP() {
   step 6 - need transportation
   */
 
+
+
   // check cookie to see if they've already filled out the RSVP
-
-  // if no RSVP
-  $('.rsvp-success').hide();
-
+  if(Cookies.get('hasRSVP')){
+    // straight to hotel booking
+    RSVPSuccess();
+  } else {
+    $('.rsvp-success').hide();
+  }
 
   if(!$('.rsvp-form').hasClass('show-all')) {
     $('.rsvp-form .step').hide();
@@ -170,12 +163,25 @@ function RSVP() {
 
   function RSVPSuccess() {
     // set the cookie
+    Cookies.set('hasRSVP', 'yes');
+
     // hide the form
-    // show the hotel order form
     $('.rsvp-form').hide();
+
+    // show the hotel order form
     $('.rsvp-success').show();
 
     $('#section-rsvp h2').text("Thanks for RSVP'ing");
+
+    // debug to get rid of the cookie
+    if($('body').hasClass('debug')) {
+      // we are debugging, so allow cookie clearing
+      $('.stamp-champagne').on('click', function(){
+        Cookies.remove('hasRSVP');
+        window.location.reload();
+        
+      })
+    }
 
   }
 
@@ -188,13 +194,16 @@ function RSVP() {
     var guestFoodChoice = $('.rsvp-form .guest-food').val();
     var transportation = $('.rsvp-form .transport').val();
 
-    console.log('invitedName = ' + invitedName);
-    console.log('invitedAttendance = ' + invitedAttendance);
-    console.log('guestCount = ' + guestCount);
-    console.log('guestName = ' + guestName);
-    console.log('invitedFoodChoice = ' + invitedFoodChoice);
-    console.log('guestFoodChoice = ' + guestFoodChoice);
-    console.log('transportation = ' + transportation);
+    if($('body').hasClass('debug')) {
+      // we are debugging, so show the values
+      console.log('invitedName = ' + invitedName);
+      console.log('invitedAttendance = ' + invitedAttendance);
+      console.log('guestCount = ' + guestCount);
+      console.log('guestName = ' + guestName);
+      console.log('invitedFoodChoice = ' + invitedFoodChoice);
+      console.log('guestFoodChoice = ' + guestFoodChoice);
+      console.log('transportation = ' + transportation);
+    }
 
     $.ajax({
       url: "https://docs.google.com/forms/d/1c6zUDJhTuU1jROzhVULY0rE38aYm1TPXAGeHcCF25g8/formResponse",
@@ -215,7 +224,7 @@ function RSVP() {
           RSVPSuccess();
         },
         200: function() {
-          // success
+          // also success. WTF.
           RSVPSuccess();
         }
       }
@@ -377,7 +386,7 @@ function shuffle(a) {
     }
 }
 
-function setup(){
+function debugSetup(){
   function addDebugLink(){
    $('.jack-stamp').prepend('<span class="debug-step-1"></span>');
    $('.main-footer').prepend('<span class="debug-step-2">Turn on Debug Mode</span>');
@@ -406,6 +415,7 @@ function setup(){
     Cookies.set('debug', 'on');
     $('body').toggleClass('debug');
     console.log('debug is on');
+
   }
 
   function turnDebugOff() {
@@ -428,10 +438,13 @@ function coverPhotos(){
   });
 }
 
-setup();
+function init() {
+  debugSetup();
+  coverPhotos();
+  RSVP();
+  stickyNav();
+  sliderSetup();
+  FAQ();
+}
 
-coverPhotos();
-RSVP();
-stickyNav();
-sliderSetup();
-FAQ();
+init();
