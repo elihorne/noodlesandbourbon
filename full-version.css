@@ -303,11 +303,12 @@ h3{
 }
 
 .photo-glamourshot{
-  background:url(/img/photo-glamourshot.png) center center no-repeat;
-  width:380px;
-  height:380px;
+  max-width:380px;
   margin: 50px auto 50px;
-  background-size:cover;
+}
+
+.photo-glamourshot img{
+  width:100%;
 }
 
 .jack-stamp{
