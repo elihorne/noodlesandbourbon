@@ -51,7 +51,7 @@ h3{
   position:relative;
 }
 
-.image-break .debug{
+.image-break .info{
   position:absolute;
   left:0;
   bottom:0;
@@ -450,6 +450,7 @@ h3{
 .rsvp-success{
   max-width: 800px;
   margin: 0 auto;
+  display: none;
 }
 
 .rsvp-success .room{
