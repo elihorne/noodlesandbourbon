@@ -353,6 +353,12 @@ h3 {
 }
 
 
+/*Details Section*/
+#section-the-location{
+  background:#fff;
+  min-height: 1030px;
+}
+
 /*Registry Section*/
 #section-registry {
   padding: 20px 0 25px;
