@@ -25,6 +25,7 @@ function sliderSetup() {
     var firstSliderItem = activeSlider.find('.slider-nav a:first-child');
     var targetClass = '.' + firstSliderItem.attr('class');
     sliderContentSwitcher(activeSlider, targetClass);
+
     // a little hacky - need to set min-height for the first item
     $('#section-the-location').css({
       'min-height' : $('#section-the-location').outerHeight()
