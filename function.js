@@ -41,6 +41,17 @@ function sliderSetup() {
 } // end sliderSetup();
 
 
+function pageShuttle(target) {
+  var arbitraryVerticalOffset = 40; // so you can see just above the h2
+
+  // manipulate the URL for refreshes
+  history.pushState(null, null, target);
+
+  // animate to the content section
+  $('html, body').animate({
+    scrollTop: $(target).offset().top - arbitraryVerticalOffset
+  }, 1000);
+}
 
 
 function linkHandler() {
@@ -53,15 +64,8 @@ function linkHandler() {
 
       var target = $(this).attr('href');
       var url = window.location.href;
-      var arbitraryVerticalOffset = 40; // so you can see just above the h2
 
-      // manipulate the URL for refreshes
-      history.pushState(null, null, target);
-
-      // animate to the content section
-      $('html, body').animate({
-        scrollTop: $(target).offset().top - arbitraryVerticalOffset
-      }, 1000);
+      pageShuttle(target);
 
     // otherwise, check if it should be opened in a new window
     } else {
@@ -332,6 +336,20 @@ function debugSetup(){
 
 }
 
+function urlIntercept(){
+  // check the hash and see if anything fancy needs to be done
+  var urlHash = window.location.hash;
+
+  if(urlHash === '#book-rooms') {
+    // proceed directly to room booking, but don't set the cookie
+    console.log('urlHash matched book rooms');
+    $('.rsvp-form').hide();
+    $('.rsvp-success').show();
+    pageShuttle('#section-rsvp');
+  } else {
+    pageShuttle(urlHash);
+  }
+}
 
 
 
@@ -503,11 +521,13 @@ function photoSetup(){
 }
 
 function init() {
+
   linkHandler();
   photoSetup();
   navSetup();
   sliderSetup();
   RSVPSetup();
+  urlIntercept();
   debugSetup();
 }
 
