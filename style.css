@@ -216,4 +216,13 @@ h1, h2, h3, h4{
 
 .main-footer{
   margin-bottom:40px;
+  text-align:center;
+}
+
+.main-footer .contact{
+  border-bottom:1px solid #EDEDFF;
+}
+
+.main-footer .hashtag{
+  display:block;
 }

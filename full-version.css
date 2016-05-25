@@ -569,8 +569,36 @@ h3 {
 .main-footer {
   text-align:center;
   position:relative;
-  padding: 25px 0 0;
-  background:#fff;f
+  padding: 0;
+  background:#fff;
+}
+
+.main-footer h3{
+  font-size: 21px;
+}
+
+.main-footer .contact{
+  border-bottom:1px solid #EDEDFF;
+  line-height:26px;
+  max-width: 490px;
+  margin: 0 auto 25px;
+  padding: 20px 0 40px;
+}
+
+
+.main-footer .hashtag{
+  display:block;
+  color:#153bb4;
+  margin: 20px 0;
+}
+
+.main-footer .heart{
+  width:16px;
+  height:14px;
+  display:block;
+  margin:0 auto;
+  background:url(img/heart.png) center center no-repeat;
+  margin-bottom:10px;
 }
 
 .main-footer p {
@@ -578,22 +606,22 @@ h3 {
 }
 
 .jack-stamp {
-  width:90px;
-  height:115px;
+  width:45px;
+  height:70px;
   display:inline-block;
   background:url(/img/stamp-jack.png) center center no-repeat;
   background-size:cover;
-  margin:0 10px;
+  margin:0 5px;
   position: relative;
 }
 
 .clark-stamp {
-  width:120px;
-  height:150px;
+  width:70px;
+  height:90px;
   display:inline-block;
   background:url(/img/stamp-clark.png) center center no-repeat;
   background-size:cover;
-  margin:0 10px;
+  margin:0 5px;
   position:relative;
   bottom:-6px;
 }
@@ -604,8 +632,8 @@ h3 {
   width: 15px;
   height: 15px;
   position:absolute;
-  top:60px;
-  left: 40px;
+  top:35px;
+  left: 16px;
   text-transform: uppercase;
 }
 

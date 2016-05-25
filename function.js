@@ -347,6 +347,9 @@ function urlIntercept(){
     $('.rsvp-success').show();
     pageShuttle('#section-rsvp');
   } else {
+    if(urlHash === '') {
+      urlHash = '#section-top';
+    }
     pageShuttle(urlHash);
   }
 }
