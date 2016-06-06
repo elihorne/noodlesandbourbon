@@ -438,8 +438,8 @@ h3 {
 .rsvp-success .room {
   display:inline-block;
   text-decoration: none;
-  padding: 15px;
-  width: calc(100%/3.42);
+  margin: 25px 20px 0;
+  width: 44%;
 }
 
 .rsvp-success .rooms h3 {
