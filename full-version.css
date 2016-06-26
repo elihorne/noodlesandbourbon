@@ -439,7 +439,7 @@ h3 {
   display:inline-block;
   text-decoration: none;
   margin: 25px 20px 0;
-  width: 44%;
+  /*width: 44%;*/
 }
 
 .rsvp-success .rooms h3 {
