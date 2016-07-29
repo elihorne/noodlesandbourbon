@@ -34,8 +34,13 @@ function sliderSetup() {
     // Handle slider nav clicks
     activeSlider.find('.slider-nav a').on('click', function(event){
       event.preventDefault();
-      var targetClass = '.' + $(this).attr('class');
-      sliderContentSwitcher(activeSlider, targetClass);
+      if($(this).hasClass('active')) {
+        return;
+      } else {
+        var targetClass = '.' + $(this).attr('class');
+        sliderContentSwitcher(activeSlider, targetClass);
+      }
+
     });
   };
 } // end sliderSetup();
