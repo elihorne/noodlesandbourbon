@@ -531,12 +531,12 @@ function photoSetup(){
 function init() {
 
   linkHandler();
-  photoSetup();
-  navSetup();
-  sliderSetup();
-  RSVPSetup();
+  //photoSetup();
+  //navSetup();
+  //sliderSetup();
+  //RSVPSetup();
   urlIntercept();
-  debugSetup();
+  //debugSetup();
 }
 
 // start your engines

@@ -136,6 +136,8 @@ h3 {
     font-family: 'Muli', sans-serif;
     font-size: 14px;
 }
+
+
 .image-break {
     height: 500px;
     border-right: 30px solid #fff;
@@ -184,6 +186,69 @@ h3 {
     letter-spacing: 2px;
     border-bottom: 1px solid rgba(21, 59, 180, 0.25);
 }
+
+.main-header .intro-text{
+  text-transform:none;
+  color:#333;
+  font-family:'Muli', sans-serif;
+  font-size:16px;
+  line-height:26px;
+  margin:26px 0;
+}
+
+.main-header .photos-wrap{
+  margin:40px 0 50px;
+  clear:both;
+}
+
+.main-header .photo-item{
+  display:inline-block;
+  text-align:center;
+  height:240px;
+  margin:0 15px;
+}
+
+.main-header .photo-item.empty .thumbnail{
+  border:1px solid #EDEDFF;
+}
+
+.main-header .photo-item.empty .description{
+  color:#333;
+}
+
+.main-header .photo-item .thumbnail{
+  display:inline-block;
+  width:200px;
+  height:200px;
+  overflow:hidden;
+  background:#fff;
+  position:relative;
+  background-size:cover;
+  background-position:center center;
+}
+
+.main-header .photo-item .soon{
+  position:absolute;
+  left:50%;
+  top:50%;
+  color:#666;
+  font-weight:bold;
+  font-size:15px;
+  background:rgba(255,255,255,0.5);
+  padding:40px;
+  text-transform: uppercase;
+  transform:translate(-50%,-50%);
+}
+
+.main-header .photo-item .description{
+  display:block;
+  max-width: 200px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size:14px;
+  margin-top:10px;
+}
+
 .main-header .rsvp-cta {
     margin-top: 20px;
 }
