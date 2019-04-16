@@ -1,0 +1,143 @@
+header {
+  max-width: 640px;
+  height: 400px;
+  background-image: url(images/crest.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+
+body {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section {
+  margin-bottom: 100px;
+  text-align: center;
+  }
+
+
+h1 {
+  font-family: Spinnaker, sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #153BB4;
+  text-align: center;
+}
+
+p {
+  font-family: Muli, sans-serif;
+  font-size: 18px;
+  color: #555555;
+  text-align: center;
+  line-height: 2;
+  margin-bottom: 50px;
+}
+
+
+a {
+  text-decoration: none;
+  font-family: Spinnaker, sans-serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #FFF;
+  border: solid 2px #F38A00;
+  padding: 16px 20px;
+  background-color: #F38A00;
+}
+
+a:hover {
+  background-color: #fff;
+  color: #F38A00;
+}
+
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  font-family: Muli, sans-serif;
+  font-size: 18px;
+  color: #555555;
+  text-align: center;
+  margin-bottom: 20px;
+  line-height: 2;
+}
+
+.emphasize {
+  font-style: italic;
+}
+
+footer {
+  width: 640px;
+  /* border-top: solid 1px #ccc; */
+  margin-bottom: 100px;
+
+}
+
+footer .dogs {
+  background-image: url(images/jackclark.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 150px;
+  height: 90px;
+  margin-top:50px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+footer .heart {
+  background-image: url(images/heart.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 20px;
+  height: 16px;
+  margin-top:30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.small {
+  font-size: 14px;
+}
+
+@media (max-width:414px) {
+  header, body, footer {
+    max-width: 300px;
+  }
+
+  header {
+    height: 300px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+  }
+
+  h1 {
+    font-size: 16px;
+  }
+
+  p {
+    font-size: 16px
+  }
+
+  li {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+
+
+
+}
