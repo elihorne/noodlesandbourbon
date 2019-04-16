@@ -1,7 +1,7 @@
 header {
   max-width: 640px;
   height: 400px;
-  background-image: url(images/crest.png);
+  background-image: url(crest.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -99,7 +99,7 @@ footer .dogs {
 }
 
 footer .heart {
-  background-image: url(images/heart.png);
+  background-image: url(heart.png);
   background-repeat: no-repeat;
   background-position: center;
   width: 20px;
