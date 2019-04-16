@@ -1,0 +1,52 @@
+
+
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <link rel="icon" href="/img/favicon.png?v=2" />
+    <title>Noodles and Bourbon</title>
+    <link href='https://fonts.googleapis.com/css?family=Muli|Spinnaker' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+
+<header>
+
+</header>
+
+<body>
+  <section>
+    <h1>A little news</h1>
+    <p>We are very excited to share that we are expecting. The baby is expected to arrive in early June and we’ve got all the feels!</p>
+    <a href="https://smile.amazon.com/baby-reg/eli-horne-liz-tan-june-2019-brooklyn/WBQDG76BXIYO" target="_blank">View our Registry</a>
+  </section>
+
+
+  <section>
+    <h1>Some FAQ's</h1>
+    <ul>
+      <li>We aren’t sharing this news on social media. Please don’t post it either.</li>
+      <li>Liz is in her third trimester and feeling good. </li>
+      <li>Eli has not gained any sympathy weight.</li>
+      <li>The baby’s gender will be revealed upon its arrival.</li>
+      <li>We don’t have any name ideas yet.</li>
+      <li>There are no plans to move at the moment.</li>
+      <li>We’re not sure if Jack and Clark are aware of the changes coming.</li>
+      <li>We don’t know how Jack and Clark will respond to the baby.</li>
+      <li class="emphasize">Please don’t post this news on social media.</li>
+    </ul>
+</section>
+
+</body>
+
+<footer>
+  <div class="heart"></div>
+  <p class="small">Eli, Liz, Clark, & Jack</p>
+  <!-- <div class="dogs"></div> -->
+
+  </footer>
+
+
+
+  </html>
