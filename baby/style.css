@@ -115,11 +115,11 @@ footer .heart {
 
 @media (max-width:414px) {
   header, body, footer {
-    max-width: 300px;
+    max-width: 280px;
   }
 
   header {
-    height: 300px;
+    height: 280px;
     margin-top: 20px;
     margin-bottom: 50px;
   }
