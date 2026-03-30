@@ -183,6 +183,54 @@
         font-size: 0.85rem;
       }
 
+      /* — Neighborhood map — */
+      .neighborhood-map {
+        margin-bottom: 2.5rem;
+      }
+      .map-embed {
+        width: 100%;
+        height: 360px;
+        border: 1px solid #eee;
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 1.25rem;
+      }
+      .map-embed iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+      .highlights {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 0.75rem;
+        list-style: none;
+      }
+      .highlights li {
+        font-size: 0.9rem;
+        color: #444;
+        display: flex;
+        align-items: baseline;
+        gap: 0.6rem;
+      }
+      .highlights .hl-category {
+        font-size: 0.65rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: #999;
+        flex-shrink: 0;
+        width: 52px;
+      }
+      .highlights .hl-name {
+        font-weight: 500;
+        color: #333;
+      }
+      .highlights .hl-note {
+        color: #888;
+        font-size: 0.8rem;
+      }
+
       /* — Contact — */
       .contact-section {
         background: #fafafa;
@@ -405,10 +453,73 @@
         </ul>
       </div>
 
+      <!-- Neighborhood -->
+      <div class="section neighborhood-map">
+        <h2>Neighborhood</h2>
+        <div class="map-embed">
+          <iframe
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-73.9700%2C40.7090%2C-73.9500%2C40.7180&layer=mapnik&marker=40.7135%2C-73.9600"
+            allowfullscreen
+            loading="lazy"
+            title="Map of Williamsburg neighborhood">
+          </iframe>
+        </div>
+        <ul class="highlights">
+          <li>
+            <span class="hl-category">Park</span>
+            <span><span class="hl-name">Domino Park</span> <span class="hl-note">— waterfront, 2 min walk</span></span>
+          </li>
+          <li>
+            <span class="hl-category">Food</span>
+            <span><span class="hl-name">Lilia</span> <span class="hl-note">— pasta, 5 min</span></span>
+          </li>
+          <li>
+            <span class="hl-category">Food</span>
+            <span><span class="hl-name">Peter Luger</span> <span class="hl-note">— steakhouse, 8 min</span></span>
+          </li>
+          <li>
+            <span class="hl-category">Food</span>
+            <span><span class="hl-name">Diner</span> <span class="hl-note">— seasonal American, 5 min</span></span>
+          </li>
+          <li>
+            <span class="hl-category">Coffee</span>
+            <span><span class="hl-name">Devoción</span> <span class="hl-note">— 7 min</span></span>
+          </li>
+          <li>
+            <span class="hl-category">Coffee</span>
+            <span><span class="hl-name">Blue Bottle</span> <span class="hl-note">— Berry St, 3 min</span></span>
+          </li>
+          <li>
+            <span class="hl-category">Drinks</span>
+            <span><span class="hl-name">Westlight</span> <span class="hl-note">— rooftop bar, 4 min</span></span>
+          </li>
+          <li>
+            <span class="hl-category">Market</span>
+            <span><span class="hl-name">Smorgasburg</span> <span class="hl-note">— Saturdays, waterfront</span></span>
+          </li>
+          <li>
+            <span class="hl-category">Grocery</span>
+            <span><span class="hl-name">Whole Foods</span> <span class="hl-note">— Bedford Ave, 6 min</span></span>
+          </li>
+          <li>
+            <span class="hl-category">Ferry</span>
+            <span><span class="hl-name">NYC Ferry</span> <span class="hl-note">— to Manhattan, 3 min walk</span></span>
+          </li>
+          <li>
+            <span class="hl-category">Subway</span>
+            <span><span class="hl-name">Marcy Ave</span> <span class="hl-note">— J/M/Z, 5 min</span></span>
+          </li>
+          <li>
+            <span class="hl-category">Subway</span>
+            <span><span class="hl-name">Bedford Ave</span> <span class="hl-note">— L train, 7 min</span></span>
+          </li>
+        </ul>
+      </div>
+
       <!-- Contact -->
       <div class="section">
         <div class="contact-section">
-          <p>Interested? Drop us a line at <a href="mailto:elihorne@gmail.com">elihorne@gmail.com</a></p>
+          <p>Interested? Drop us a line at <a href="mailto:noodlesandbourbon@gmail.com">noodlesandbourbon@gmail.com</a></p>
         </div>
       </div>
     </div>
