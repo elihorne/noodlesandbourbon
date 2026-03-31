@@ -13,7 +13,7 @@
 
       body {
         font-family: 'Inter', system-ui, -apple-system, sans-serif;
-        background: #fff;
+        background: #f3f1ee;
         color: #1a1a2e;
         line-height: 1.6;
         -webkit-font-smoothing: antialiased;
@@ -70,13 +70,13 @@
 
       /* — Availability banner — */
       .availability {
-        background: #eef3ff;
-        border: 1px solid #d0dafb;
-        border-radius: 10px;
-        padding: 1rem 1.25rem;
+        background: #fafafa;
+        border: 1px solid #eee;
+        border-radius: 12px;
+        padding: 1.5rem;
         margin-bottom: 2.5rem;
         font-size: 0.9rem;
-        color: #2a3f7a;
+        color: #555;
       }
       .availability strong {
         font-weight: 600;
@@ -141,6 +141,9 @@
         color: #444;
         max-width: 640px;
       }
+      .section p + p {
+        margin-top: 1.25rem;
+      }
 
       /* — Amenity list — */
       .amenities {
@@ -202,39 +205,23 @@
       }
       .highlights {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-        gap: 0.75rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.4rem 2rem;
         list-style: none;
       }
       .highlights li {
         font-size: 0.9rem;
         color: #444;
-        display: flex;
-        align-items: baseline;
-        gap: 0.6rem;
-      }
-      .highlights .hl-category {
-        font-size: 0.65rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-        color: #999;
-        flex-shrink: 0;
-        width: 52px;
-      }
-      .highlights .hl-name {
-        font-weight: 500;
-        color: #333;
+        padding: 0.25rem 0;
       }
       .highlights .hl-note {
         color: #888;
-        font-size: 0.8rem;
       }
 
       /* — Contact — */
       .contact-section {
-        background: #fafafa;
-        border: 1px solid #eee;
+        background: transparent;
+        border: 1px solid #ccc;
         border-radius: 12px;
         padding: 1.5rem;
         text-align: center;
@@ -244,6 +231,14 @@
         color: #555;
         margin: 0 auto;
       }
+      .section a {
+        color: #3b5fe0;
+        text-decoration: none;
+      }
+      .section a:hover {
+        text-decoration: underline;
+      }
+
       .contact-section a {
         color: #3b5fe0;
         text-decoration: none;
@@ -329,6 +324,7 @@
         color: #bbb;
       }
     </style>
+  <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
   </head>
   <body>
     <div class="container">
@@ -339,77 +335,76 @@
         <p class="subtitle">Williamsburg, Brooklyn</p>
       </div>
 
-      <div class="details">
-        <span class="detail-pill">2 Bed</span>
-        <span class="detail-pill">2.5 Bath</span>
-        <span class="detail-pill">1,362 sq ft</span>
-        <span class="detail-pill">Doorman Building</span>
-        <span class="detail-pill">Washer/Dryer In-Unit</span>
-      </div>
-
-      <div class="availability">
-        <strong>Available July 1 – 31, 2026</strong> — One-month furnished sublet, offered to friends &amp; family.
-        Reach out if you're interested.
+      <!-- Description -->
+      <div class="section">
+        <p>A sun-drenched Williamsburg loft, available for July.</p>
+        <p>Soaring 12-foot ceilings, exposed beams, and a sweep of east- and south-facing windows make it feel bright and open all day long. There's a dedicated office nook, a kids' room with a built-in bunk bed if you need it, and enough space and bathrooms that everyone has room to breathe.</p>
+        <p>A short walk to Domino Park and the East River waterfront, surrounded by great food, coffee, and the particular energy of a Brooklyn neighborhood that still feels like a neighborhood. Central air, in-unit washer/dryer, and dishwasher included.</p>
+        <p>Interested? Message us at <a href="mailto:noodlesandbourbon@gmail.com">noodlesandbourbon@gmail.com</a></p>
       </div>
 
       <!-- Photo grid -->
       <div class="photo-grid">
         <div class="photo-item" onclick="openLightbox(0)">
-          <img src="/img/seats/01-living.jpg" alt="Living room" loading="eager" />
+          <img src="/img/seats/18-living.jpeg" alt="Living room" loading="eager" />
         </div>
         <div class="photo-item" onclick="openLightbox(1)">
-          <img src="/img/seats/02-kitchen.jpg" alt="Kitchen" loading="lazy" />
+          <img src="/img/seats/16-foyer.jpg" alt="Foyer" loading="lazy" />
         </div>
         <div class="photo-item" onclick="openLightbox(2)">
-          <img src="/img/seats/03-bedroom.jpg" alt="Bedroom" loading="lazy" />
+          <img src="/img/seats/19-office.jpg" alt="Office" loading="lazy" />
         </div>
         <div class="photo-item" onclick="openLightbox(3)">
-          <img src="/img/seats/04-bathroom.jpg" alt="Bathroom" loading="lazy" />
+          <img src="/img/seats/17-kids.jpg" alt="Kids room" loading="lazy" />
         </div>
         <div class="photo-item" onclick="openLightbox(4)">
+          <img src="/img/seats/15-bedroom.jpeg" alt="Bedroom" loading="lazy" />
+        </div>
+        <!-- <div class="photo-item" onclick="openLightbox(-)">
+          <img src="/img/seats/01-living.jpg" alt="Living room" loading="lazy" />
+        </div> -->
+        <!-- <div class="photo-item" onclick="openLightbox(-)">
+          <img src="/img/seats/02-kitchen.jpg" alt="Kitchen" loading="lazy" />
+        </div> -->
+        <div class="photo-item" onclick="openLightbox(5)">
+          <img src="/img/seats/03-bedroom.jpg" alt="Bedroom" loading="lazy" />
+        </div>
+        <!-- <div class="photo-item" onclick="openLightbox(-)">
+          <img src="/img/seats/04-bathroom.jpg" alt="Bathroom" loading="lazy" />
+        </div> -->
+        <div class="photo-item" onclick="openLightbox(6)">
           <img src="/img/seats/05-detail1.jpg" alt="Detail" loading="lazy" />
         </div>
-        <div class="photo-item" onclick="openLightbox(5)">
+        <div class="photo-item" onclick="openLightbox(7)">
           <img src="/img/seats/06-detail2.jpg" alt="Detail" loading="lazy" />
         </div>
-        <div class="photo-item" onclick="openLightbox(6)">
+        <div class="photo-item" onclick="openLightbox(8)">
           <img src="/img/seats/07-detail3.jpg" alt="Detail" loading="lazy" />
         </div>
-        <div class="photo-item" onclick="openLightbox(7)">
+        <div class="photo-item" onclick="openLightbox(9)">
           <img src="/img/seats/08-detail4.jpg" alt="Detail" loading="lazy" />
         </div>
-        <div class="photo-item" onclick="openLightbox(8)">
+        <div class="photo-item" onclick="openLightbox(10)">
           <img src="/img/seats/09-detail5.jpg" alt="Detail" loading="lazy" />
         </div>
-        <div class="photo-item" onclick="openLightbox(9)">
+        <div class="photo-item" onclick="openLightbox(11)">
           <img src="/img/seats/10-detail6.jpg" alt="Detail" loading="lazy" />
         </div>
-        <div class="photo-item" onclick="openLightbox(10)">
+        <div class="photo-item" onclick="openLightbox(12)">
           <img src="/img/seats/11-waterfront.jpg" alt="Waterfront view" loading="lazy" />
         </div>
-        <div class="photo-item" onclick="openLightbox(11)">
+        <div class="photo-item" onclick="openLightbox(13)">
           <img src="/img/seats/12-gym.jpg" alt="Gym" loading="lazy" />
         </div>
-        <div class="photo-item" onclick="openLightbox(12)">
+        <div class="photo-item" onclick="openLightbox(14)">
           <img src="/img/seats/13-building.jpg" alt="Building exterior" loading="lazy" />
         </div>
-      </div>
-
-      <!-- Description -->
-      <div class="section">
-        <h2>About the apartment</h2>
-        <p>
-          Industrial-chic corner unit with over 12-foot ceilings, exposed beams, and massive windows
-          providing east and south city views. Converted early 20th-century factory space with
-          abundant natural light throughout. Central air, in-unit washer/dryer, dishwasher,
-          and private outdoor space.
-        </p>
       </div>
 
       <!-- Floor plan -->
       <div class="section floorplan-row">
         <h2>Floor plan</h2>
-        <img src="/img/seats/14-floorplan.jpg" alt="Floor plan" onclick="openLightbox(13)" />
+        <img src="/img/seats/14-floorplan.jpg" alt="Floor plan" onclick="openLightbox(15)" />
       </div>
 
       <!-- Unit amenities -->
@@ -419,7 +414,7 @@
           <li>Central air conditioning</li>
           <li>In-unit washer/dryer</li>
           <li>Dishwasher</li>
-          <li>Private outdoor space</li>
+          <li>High-speed Wi-Fi</li>
           <li>12-foot ceilings</li>
           <li>Corner unit — east &amp; south exposure</li>
         </ul>
@@ -431,14 +426,10 @@
         <ul class="amenities">
           <li>Doorman &amp; concierge</li>
           <li>Elevator</li>
-          <li>Live-in super</li>
           <li>Gym</li>
           <li>Roof deck</li>
-          <li>Bike room</li>
           <li>Package room</li>
-          <li>Laundry (in addition to in-unit)</li>
           <li>Garden</li>
-          <li>Storage available</li>
         </ul>
       </div>
 
@@ -465,54 +456,16 @@
           </iframe>
         </div>
         <ul class="highlights">
-          <li>
-            <span class="hl-category">Park</span>
-            <span><span class="hl-name">Domino Park</span> <span class="hl-note">— waterfront, 2 min walk</span></span>
-          </li>
-          <li>
-            <span class="hl-category">Food</span>
-            <span><span class="hl-name">Lilia</span> <span class="hl-note">— pasta, 5 min</span></span>
-          </li>
-          <li>
-            <span class="hl-category">Food</span>
-            <span><span class="hl-name">Peter Luger</span> <span class="hl-note">— steakhouse, 8 min</span></span>
-          </li>
-          <li>
-            <span class="hl-category">Food</span>
-            <span><span class="hl-name">Diner</span> <span class="hl-note">— seasonal American, 5 min</span></span>
-          </li>
-          <li>
-            <span class="hl-category">Coffee</span>
-            <span><span class="hl-name">Devoción</span> <span class="hl-note">— 7 min</span></span>
-          </li>
-          <li>
-            <span class="hl-category">Coffee</span>
-            <span><span class="hl-name">Blue Bottle</span> <span class="hl-note">— Berry St, 3 min</span></span>
-          </li>
-          <li>
-            <span class="hl-category">Drinks</span>
-            <span><span class="hl-name">Westlight</span> <span class="hl-note">— rooftop bar, 4 min</span></span>
-          </li>
-          <li>
-            <span class="hl-category">Market</span>
-            <span><span class="hl-name">Smorgasburg</span> <span class="hl-note">— Saturdays, waterfront</span></span>
-          </li>
-          <li>
-            <span class="hl-category">Grocery</span>
-            <span><span class="hl-name">Whole Foods</span> <span class="hl-note">— Bedford Ave, 6 min</span></span>
-          </li>
-          <li>
-            <span class="hl-category">Ferry</span>
-            <span><span class="hl-name">NYC Ferry</span> <span class="hl-note">— to Manhattan, 3 min walk</span></span>
-          </li>
-          <li>
-            <span class="hl-category">Subway</span>
-            <span><span class="hl-name">Marcy Ave</span> <span class="hl-note">— J/M/Z, 5 min</span></span>
-          </li>
-          <li>
-            <span class="hl-category">Subway</span>
-            <span><span class="hl-name">Bedford Ave</span> <span class="hl-note">— L train, 7 min</span></span>
-          </li>
+          <li>Butler <span class="hl-note">— 1 min</span></li>
+          <li>Diner <span class="hl-note">— 5 min</span></li>
+          <li>Lilia <span class="hl-note">— 5 min</span></li>
+          <li>Devoción <span class="hl-note">— 6 min</span></li>
+          <li>Maru Coffee<span class="hl-note">— 7 min</span></li>
+          <li>Peter Luger <span class="hl-note">— 7 min</span></li>
+          <li>Whole Foods <span class="hl-note">— 10 min</span></li>
+          <li>Trader Joe's <span class="hl-note">— 12 min</span></li>
+          <li>Domino Park <span class="hl-note">— 4 min </span></li>
+          <li>McCarren Park <span class="hl-note">— 20 min</span></li>
         </ul>
       </div>
 
@@ -537,20 +490,22 @@
 
     <script>
       const photos = [
-        '/img/seats/01-living.jpg',
-        '/img/seats/02-kitchen.jpg',
-        '/img/seats/03-bedroom.jpg',
-        '/img/seats/04-bathroom.jpg',
-        '/img/seats/05-detail1.jpg',
-        '/img/seats/06-detail2.jpg',
-        '/img/seats/07-detail3.jpg',
-        '/img/seats/08-detail4.jpg',
-        '/img/seats/09-detail5.jpg',
-        '/img/seats/10-detail6.jpg',
-        '/img/seats/11-waterfront.jpg',
-        '/img/seats/12-gym.jpg',
-        '/img/seats/13-building.jpg',
-        '/img/seats/14-floorplan.jpg'
+        '/img/seats/18-living.jpeg',   // 0
+        '/img/seats/16-foyer.jpg',     // 1
+        '/img/seats/19-office.jpg',    // 2
+        '/img/seats/17-kids.jpg',      // 3
+        '/img/seats/15-bedroom.jpeg',  // 4
+        '/img/seats/03-bedroom.jpg',   // 5
+        '/img/seats/05-detail1.jpg',   // 6
+        '/img/seats/06-detail2.jpg',   // 7
+        '/img/seats/07-detail3.jpg',   // 8
+        '/img/seats/08-detail4.jpg',   // 9
+        '/img/seats/09-detail5.jpg',   // 10
+        '/img/seats/10-detail6.jpg',   // 11
+        '/img/seats/11-waterfront.jpg',// 12
+        '/img/seats/12-gym.jpg',       // 13
+        '/img/seats/13-building.jpg',  // 14
+        '/img/seats/14-floorplan.jpg'  // 15
       ];
       let current = 0;
 
